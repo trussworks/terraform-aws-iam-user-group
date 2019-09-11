@@ -23,8 +23,9 @@ NOTE: So far you must use this in conjunction with the module "trussworks/mfa/aw
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| group\_name | The name of the group to be created. | string | n/a | yes |
 | user\_names | Create IAM users with these names. | list(string) | `[]` | no |
+| force\_destroy\_users | Sets 'force_destroy' to true or false for all IAM users generated with this module. | bool | `true` | no |
+| group\_name | The name of the group to be created. | string | n/a | yes |
 | allowed\_roles | The roles that this group is allowed to assume. | list(string) | `` | no |
 
 ## Outputs
