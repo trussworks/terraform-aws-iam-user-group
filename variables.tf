@@ -4,6 +4,12 @@ variable "user_names" {
     default = []
 }
 
+variable "force_destroy_users" {
+    description = "Sets 'force_destroy' to true or false for all IAM users generated with this module."
+    type = bool
+    default = true
+}
+
 variable "group_name" {
     description = "The name of the group to be created."
     type = string
