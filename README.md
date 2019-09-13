@@ -12,13 +12,35 @@ The generated users are members of the group "admin-org-root" and have the "forc
 ## Usage
 
 ```hcl
-    module "aws-iam-user-group" {
+    module "aws_iam_user_group" {
       source         = "trussworks/iam-user-group/aws"
+      version = "1.2.0"
 
       user_names = ["user1", "user2"]
       group_name = "group-name"
       allowed_roles = []
       }
+```
+
+## Usage example
+```hcl
+locals {
+  user_list = ["user1", "user2"]
+  force_destroy = true
+}
+
+resource "aws_iam_user" "user" {
+  for_each = toset(var.user_list)
+  name     = each.value
+}
+
+module "aws_iam_user_group" {
+  source         = "trussworks/iam-user-group/aws"
+  version = "1.2.0"
+  user_names = values(aws_iam_user.user)[*].name
+  group_name = "group-name"
+  allowed_roles = []
+}
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

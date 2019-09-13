@@ -1,5 +1,5 @@
 variable "user_names" {
-  description = "Create IAM users with these names."
+  description = "List of IAM users to add to the group."
   type        = list(string)
   default     = []
 }
