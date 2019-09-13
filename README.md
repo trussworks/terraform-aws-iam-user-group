@@ -23,6 +23,7 @@ The generated users are members of the group "admin-org-root" and have the "forc
 ```
 
 ## Usage example
+
 ```hcl
 locals {
   user_list = ["user1", "user2"]
@@ -49,9 +50,8 @@ module "aws_iam_user_group" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | allowed\_roles | The roles that this group is allowed to assume. | list(string) | n/a | yes |
-| force\_destroy\_users | Sets 'force_destroy' to true or false for all IAM users generated with this module. Note:Turning force_destroy off means that a user with IAM permissions will have to go and remove MFA and keys from a user you might be managing this way. | bool | `"true"` | no |
 | group\_name | The name of the group to be created. | string | n/a | yes |
-| user\_names | Create IAM users with these names. | list(string) | `[]` | no |
+| user\_list | List of IAM users to add to the group. | list(string) | `[]` | no |
 
 ## Outputs
 
