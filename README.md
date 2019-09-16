@@ -1,22 +1,19 @@
-This module creates users based on the "user_names" variable and a group based on the "group_name" variable.
-The users are added to the group created.
+This module creates a group named after the "group_name" variable intended to contain IAM users defined in the "user_list".
 
 The group has a policy that only allows the assumption of the IAM roles defined in the "allowed_roles" variable.
 
-The generated users are members of the group "admin-org-root" and have the "force_destroy" flag set to true.
+__NOTE__: So far you must use this in conjunction with the module "trussworks/mfa/aws" to enforce mfa of the group this module creates.
 
-_NOTE_: So far you must use this in conjunction with the module "trussworks/mfa/aws" to enforce mfa of the group this module creates.
-
-_Philosophical note_: these groups should map 1:1 to IAM roles defined in your Terraform files. These should be defined in a separate module that could be reused in different accounts across your AWS org. So you may have multiple allowed roles with the same name across your accounts as a variable.
+__Philosophical note__: these groups should map 1:1 to IAM roles defined in your Terraform files. These should be defined in a separate module that could be reused in different accounts across your AWS org. So you may have multiple allowed roles with the same name across your accounts as a variable.
 
 ## Usage
 
 ```hcl
     module "aws_iam_user_group" {
       source         = "trussworks/iam-user-group/aws"
-      version = "1.2.0"
+      version = "1.0.2"
 
-      user_names = ["user1", "user2"]
+      user_list = ["user1", "user2"]
       group_name = "group-name"
       allowed_roles = []
       }
