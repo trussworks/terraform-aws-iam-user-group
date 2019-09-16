@@ -1,15 +1,4 @@
 #
-# Generate IAM users
-#
-
-resource "aws_iam_user" "user" {
-  for_each = toset(var.user_names)
-  name     = each.value
-  # Set force_destroy = true to make user clean up easier later.
-  force_destroy = var.force_destroy_users
-}
-
-#
 # IAM group + membership of group
 #
 
@@ -20,7 +9,7 @@ resource "aws_iam_group" "user_group" {
 resource "aws_iam_group_membership" "user_group" {
   name = "${var.group_name}-membership"
 
-  users = values(aws_iam_user.user)[*].name
+  users = var.user_list
 
   group = aws_iam_group.user_group.name
 }
