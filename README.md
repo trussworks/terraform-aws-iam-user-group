@@ -28,13 +28,13 @@ locals {
 }
 
 resource "aws_iam_user" "user" {
-  for_each = toset(var.user_list)
+  for_each = toset(local.user_list)
   name     = each.value
 }
 
 module "aws_iam_user_group" {
   source         = "trussworks/iam-user-group/aws"
-  version = "1.2.0"
+  version = "1.0.2"
   user_names = values(aws_iam_user.user)[*].name
   group_name = "group-name"
   allowed_roles = []
