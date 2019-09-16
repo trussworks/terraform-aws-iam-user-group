@@ -5,9 +5,9 @@ The group has a policy that only allows the assumption of the IAM roles defined 
 
 The generated users are members of the group "admin-org-root" and have the "force_destroy" flag set to true.
 
-*NOTE*: So far you must use this in conjunction with the module "trussworks/mfa/aws" to enforce mfa of the group this module creates.
+_NOTE_: So far you must use this in conjunction with the module "trussworks/mfa/aws" to enforce mfa of the group this module creates.
 
-*Philosophical note*: these groups should map 1:1 to IAM roles defined in your Terraform files. These should be defined in a separate module that could be reused in different accounts across your AWS org. So you may have multiple allowed roles with the same name across your accounts as a variable.
+_Philosophical note_: these groups should map 1:1 to IAM roles defined in your Terraform files. These should be defined in a separate module that could be reused in different accounts across your AWS org. So you may have multiple allowed roles with the same name across your accounts as a variable.
 
 ## Usage
 
