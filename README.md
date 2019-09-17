@@ -35,7 +35,7 @@ resource "aws_iam_user" "user" {
 module "aws_iam_user_group" {
   source         = "trussworks/iam-user-group/aws"
   version = "1.0.2"
-  user_names = values(aws_iam_user.user)[*].name
+  user_list = values(aws_iam_user.user)[*].name
   group_name = "group-name"
   allowed_roles = []
 }
