@@ -28,11 +28,11 @@ resource "aws_iam_policy" "assume_role_policy" {
   name        = "assume-role-${aws_iam_group.user_group.name}"
   path        = "/"
   description = "Allows the ${aws_iam_group.user_group.name} role to be assumed."
-  policy      = "${data.aws_iam_policy_document.assume_role_policy_doc.json}"
+  policy      = data.aws_iam_policy_document.assume_role_policy_doc.json
 }
 
 resource "aws_iam_group_policy_attachment" "assume_role_policy_attachment" {
-  group      = "${aws_iam_group.user_group.name}"
-  policy_arn = "${aws_iam_policy.assume_role_policy.arn}"
+  group      = aws_iam_group.user_group.name
+  policy_arn = aws_iam_policy.assume_role_policy.arn
 }
 
