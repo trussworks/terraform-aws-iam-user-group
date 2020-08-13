@@ -42,13 +42,25 @@ module "aws_iam_user_group" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.12.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| allowed\_roles | The roles that this group is allowed to assume. | list(string) | n/a | yes |
-| group\_name | The name of the group to be created. | string | n/a | yes |
-| user\_list | List of IAM users to add to the group. | list(string) | `[]` | no |
+|------|-------------|------|---------|:--------:|
+| allowed\_roles | The roles that this group is allowed to assume. | `list(string)` | n/a | yes |
+| group\_name | The name of the group to be created. | `string` | n/a | yes |
+| user\_list | List of IAM users to add to the group. | `list(string)` | `[]` | no |
 
 ## Outputs
 
