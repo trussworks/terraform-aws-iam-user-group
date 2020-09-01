@@ -1,8 +1,10 @@
+data "aws_caller_identity" "current" {}
+
 // create a test user to add
 locals {
   test_users = [
-    "${test_name}-foo",
-    "${test_name}-bar"
+    "${var.test_name}-foo",
+    "${var.test_name}-bar"
   ]
 }
 
@@ -49,5 +51,5 @@ module "test_group" {
   allowed_roles = [
     aws_iam_role.test_role.arn,
   ]
-  group_name = "${test_name}-group"
+  group_name = "${var.test_name}-group"
 }

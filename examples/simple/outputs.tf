@@ -1,4 +1,4 @@
-output "repo_url" {
-  description = "URL for ECR repo created"
-  value       = module.aws_ecr.repo_url
+output "group_name" {
+  description = "Group Name"
+  value       = module.test_group.group_name
 }
