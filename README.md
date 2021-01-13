@@ -8,7 +8,7 @@ __Philosophical note__: these groups should map 1:1 to IAM roles defined in your
 
 ## Terraform Versions
 
-Terraform 0.13. Pin module version to ~> 2.X. Submit pull-requests to master branch.
+Terraform 0.13 and later. Pin module version to ~> 2.X. Submit pull-requests to master branch.
 Terraform 0.12. Pin module version to ~> 1.0.3. Submit pull-requests to terraform011 branch.
 
 ## Usage
@@ -51,14 +51,14 @@ module "aws_iam_user_group" {
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.13.0 |
-| aws | ~> 3.0 |
+| terraform | >= 0.13.0 |
+| aws | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.0 |
+| aws | >= 3.0 |
 
 ## Inputs
 
