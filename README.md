@@ -51,28 +51,41 @@ module "aws_iam_user_group" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13.0 |
-| aws | >= 3.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 3.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_iam_group.user_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group) | resource |
+| [aws_iam_group_membership.user_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_membership) | resource |
+| [aws_iam_group_policy_attachment.assume_role_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
+| [aws_iam_policy.assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_policy_document.assume_role_policy_doc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| allowed\_roles | The roles that this group is allowed to assume. | `list(string)` | n/a | yes |
-| group\_name | The name of the group to be created. | `string` | n/a | yes |
-| user\_list | List of IAM users to add to the group. | `list(string)` | `[]` | no |
+| <a name="input_allowed_roles"></a> [allowed\_roles](#input\_allowed\_roles) | The roles that this group is allowed to assume. | `list(string)` | n/a | yes |
+| <a name="input_group_name"></a> [group\_name](#input\_group\_name) | The name of the group to be created. | `string` | n/a | yes |
+| <a name="input_user_list"></a> [user\_list](#input\_user\_list) | List of IAM users to add to the group. | `list(string)` | `[]` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| group\_name | The name of the created group. |
-
+| <a name="output_group_name"></a> [group\_name](#output\_group\_name) | The name of the created group. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
