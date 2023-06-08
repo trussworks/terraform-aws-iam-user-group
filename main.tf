@@ -35,4 +35,3 @@ resource "aws_iam_group_policy_attachment" "assume_role_policy_attachment" {
   group      = aws_iam_group.user_group.name
   policy_arn = aws_iam_policy.assume_role_policy.arn
 }
-

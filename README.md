@@ -41,7 +41,7 @@ module "aws_iam_user_group" {
 }
 ```
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -82,5 +82,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_group_name"></a> [group\_name](#output\_group\_name) | The name of the created group. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
+<!-- END_TF_DOCS -->
