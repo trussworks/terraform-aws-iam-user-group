@@ -6,11 +6,6 @@ __NOTE__: So far you must use this in conjunction with the module "trussworks/mf
 
 __Philosophical note__: these groups should map 1:1 to IAM roles defined in your Terraform files. These should be defined in a separate module that could be reused in different accounts across your AWS org. So you may have multiple allowed roles with the same name across your accounts as a variable.
 
-## Terraform Versions
-
-Terraform 0.13 and later. Pin module version to ~> 2.X. Submit pull-requests to master branch.
-Terraform 0.12. Pin module version to ~> 1.0.3. Submit pull-requests to terraform011 branch.
-
 ## Usage
 
 ```hcl
@@ -46,12 +41,12 @@ module "aws_iam_user_group" {
 }
 ```
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
 
 ## Providers
@@ -87,5 +82,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_group_name"></a> [group\_name](#output\_group\_name) | The name of the created group. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
+<!-- END_TF_DOCS -->
