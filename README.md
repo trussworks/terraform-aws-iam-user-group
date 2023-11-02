@@ -73,7 +73,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_allowed_roles"></a> [allowed\_roles](#input\_allowed\_roles) | The roles that this group is allowed to assume. | `list(string)` | n/a | yes |
+| <a name="input_allowed_roles"></a> [allowed\_roles](#input\_allowed\_roles) | ARN of the roles that this group is allowed to assume. | `list(string)` | n/a | yes |
 | <a name="input_group_name"></a> [group\_name](#input\_group\_name) | The name of the group to be created. | `string` | n/a | yes |
 | <a name="input_user_list"></a> [user\_list](#input\_user\_list) | List of IAM users to add to the group. | `list(string)` | `[]` | no |
 

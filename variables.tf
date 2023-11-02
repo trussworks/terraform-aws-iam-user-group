@@ -10,6 +10,6 @@ variable "group_name" {
 }
 
 variable "allowed_roles" {
-  description = "The roles that this group is allowed to assume."
+  description = "ARN of the roles that this group is allowed to assume."
   type        = list(string)
 }
